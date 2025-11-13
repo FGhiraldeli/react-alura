@@ -25,6 +25,7 @@ function App() {
       <section>
         <img Src='/banner.png' alt=''></img>
       </section>
+      <FormularioDeEvento />
     </main>
   );
 }
