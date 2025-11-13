@@ -11,7 +11,7 @@ header {
 }
 
 section {
-  background: linear-gradient(180deg, #17e4b9 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #17e4b9 0%, #091d24 100%);
   display: flex;
   justify-content: center;
 }
