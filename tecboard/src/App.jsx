@@ -1,6 +1,7 @@
 /** @format */
 
 import "./App.css";
+import { Banner } from "./componentes/Banner";
 import { FormularioDeEvento } from "./componentes/FormularioDeEvento";
 import { Tema } from "./componentes/Tema";
 
@@ -22,9 +23,7 @@ function App() {
       <header>
         <img src='/logo.png' alt=''></img>
       </header>
-      <section>
-        <img Src='/banner.png' alt=''></img>
-      </section>
+      <Banner />
       <FormularioDeEvento />
       <section><Tema tema={temas[0]} /></section>
       <section><Tema tema={temas[1]} /></section>
