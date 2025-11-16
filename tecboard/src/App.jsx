@@ -27,10 +27,11 @@ function App() {
       <Banner />
       <FormularioDeEvento />
       {temas.map(function (item) {
-        return (<section>
+        return (<section key={item.id}>
           <Tema tema={item} />
         </section>)
       })}
+
       {/* <section><Tema tema={temas[0]} /></section>
       <section><Tema tema={temas[1]} /></section>
       <section><Tema tema={temas[2]} /></section>
