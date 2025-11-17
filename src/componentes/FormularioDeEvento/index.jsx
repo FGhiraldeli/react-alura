@@ -1,10 +1,8 @@
-/** @format */
 import "./formulario-de-eventos.estilos.css";
 import { CampoDeEntrada } from "../CampoDeEntrada";
 import { CampoDeFormulario } from "../CampoDeFormulario";
 import { Label } from "../Label";
 import { TituloFormulario } from "../TituloFormulario";
-import React from "react";
 import { Botao } from "../Botao";
 import { ListaSuspensa } from "../ListaSuspensa";
 
@@ -28,9 +26,6 @@ export function FormularioDeEvento() {
           <Label htmlFor='dataEvento'>Data do evento:</Label>
           <CampoDeEntrada type="date" id='dataEvento' name='dataEvento' />
         </CampoDeFormulario>
-        <ListaSuspensa>
-
-        </ListaSuspensa>
       </div>
       <div className="acoes">
         <Botao>
