@@ -7,19 +7,35 @@ import { Botao } from "../Botao";
 import { ListaSuspensa } from "../ListaSuspensa";
 
 export function FormularioDeEvento({ temas }) {
+
+  function aoFormSubmetido({formData}){
+    console.log('opa, tá na hora de criar um novo evento', formData);
+  }
+
   return (
-    <form className="form-evento">
+    <form className="form-evento" action={aoFormSubmetido}>
       <TituloFormulario>Preencha para criar um evento:</TituloFormulario>
       <div className="campos">
         <CampoDeFormulario>
-          <Label htmlFor="nome" className="label">
-            Qual o nome do evento?{" "}
+          <Label htmlFor="nomeEvento" className="label">
+            Qual o nome do evento?
           </Label>
           <CampoDeEntrada
             type="text"
-            id="nome"
+            id="nomeEvento"
             placeholder="Summer dev hits"
             name="nomeEvento"
+          />
+        </CampoDeFormulario>
+        <CampoDeFormulario>
+          <Label htmlFor="capa" className="label">
+            Qual o endereço da imagem de capa?
+          </Label>
+          <CampoDeEntrada
+            type="text"
+            id="capa"
+            placeholder="http://"
+            name="capa"
           />
         </CampoDeFormulario>
         <CampoDeFormulario>
