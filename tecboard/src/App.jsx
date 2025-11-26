@@ -24,53 +24,29 @@ function App() {
       tema: temas[0],
       data: new Date(),
       titulo: "Mulheres no Front",
-    },
-    {
-      capa: "https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_2.png",
-      tema: temas[1],
-      data: new Date(),
-      titulo: "Mulheres no Front",
-    },
-    {
-      capa: "https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_3.png",
-      tema: temas[2],
-      data: new Date(),
-      titulo: "Mulheres no Front",
-    },
-    {
-      capa: "https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_4.png",
-      tema: temas[3],
-      data: new Date(),
-      titulo: "Mulheres no Front",
-    },
-    {
-      capa: "https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_5.png",
-      tema: temas[4],
-      data: new Date(),
-      titulo: "Mulheres no Front",
-    },
-    {
-      capa: "https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_6.png",
-      tema: temas[5],
-      data: new Date(),
-      titulo: "Mulheres no Front",
-    },
+    }
   ];
+
+  function adicionarEvento(evento) {
+    eventos.push(evento);
+    console.log("eventos =>", eventos);
+  }
 
   return (
     <main>
       <header>
         <img src="/logo.png" alt=""></img>
       </header>
-  
 
       <Banner />
-      <FormularioDeEvento temas={temas} />
+      <FormularioDeEvento temas={temas} aoSubmeter={adicionarEvento} />
       {temas.map(function (item) {
         return (
           <section key={item.id}>
             <Tema tema={item} />
-            <CardEvento evento={eventos[0]} />
+            {eventos.map(function (item, indice) {
+              return <CardEvento evento={item} key={indice} />;
+            })}
           </section>
         );
       })}
