@@ -44,6 +44,7 @@ function App() {
     // eventos.push(evento);
     // console.log("eventos =>", eventos);
     setEventos([...eventos, evento]);
+    console.log(eventos);
   }
 
   return (

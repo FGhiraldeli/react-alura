@@ -9,12 +9,16 @@ import { ListaSuspensa } from "../ListaSuspensa";
 export function FormularioDeEvento({ temas, aoSubmeter }) {
   function aoFormSubmetido(formData) {
     console.log("opa, tá na hora de criar um novo evento", formData);
+    console.log(formData.get("dataEvento"));
+    console.log(new Date(formData.get("dataEvento")));
+    console.log(new Date(formData.get("dataEvento")+ "T00:00:00-03:00").toLocaleDateString('pt-BR'));
+    
     const evento = {
       capa: formData.get("capa"),
       tema: temas.find(function (item) {
         return item.id == formData.get("tema");
       }),
-      data: new Date(formData.get("dataEvento")),
+      data: new Date(formData.get("dataEvento")+"T00:00:00-03:00"),
       titulo: formData.get("nomeEvento"),
     };
     aoSubmeter(evento);
