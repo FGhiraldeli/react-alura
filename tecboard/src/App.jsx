@@ -54,17 +54,21 @@ function App() {
 
       <Banner />
       <FormularioDeEvento temas={temas} aoSubmeter={adicionarEvento} />
-      {temas.map(function (item) {
-        return (
-          <section key={item.id}>
-            <Tema tema={item} />
-            {eventos.map(function (item, indice) {
-              return <CardEvento evento={item} key={indice} />;
-            })}
-          </section>
-        );
-      })}
 
+      <section className="container">
+        {temas.map(function (item) {
+          return (
+            <section key={item.id}>
+              <Tema tema={item} />
+              <div className="eventos">
+                {eventos.map(function (item, indice) {
+                  return <CardEvento evento={item} key={indice} />;
+                })}
+              </div>
+            </section>
+          );
+        })}
+      </section>
       {/* <section><Tema tema={temas[0]} /></section>
       <section><Tema tema={temas[1]} /></section>
       <section><Tema tema={temas[2]} /></section>
