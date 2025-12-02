@@ -46,6 +46,7 @@ function App() {
     setEventos([...eventos, evento]);
   }
 
+  // renderezacao condicional usando &&
   return (
     <main>
       <header>
